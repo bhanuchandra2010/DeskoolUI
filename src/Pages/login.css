@@ -1,0 +1,57 @@
+.login-group {
+    top: 100px;
+    width: 350px;
+    border: 1px #ddd solid;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px auto 0;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo a {
+    color: #212529;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+a.forgot-password {
+    margin: 20px 10px 0 0px;
+}
+
+.login-button {
+    width: 60%;
+}
+
+.register-group {
+    text-align: center;
+}
+
+.form-group.register-group button {
+    font-size: 15px;
+    width: 350px;
+    background-color: #343a40;
+    border-radius: 4px;
+}
+
+.modal-response {
+    margin: 10px 0px;
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0 5px 0;
+    font-size: 13px;
+}
+
+.footer-copyright {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}

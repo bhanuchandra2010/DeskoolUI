@@ -16,6 +16,8 @@
 15. New-project
 16.	Footer
 17.	Footer Copyright
+18. Application
+19. Payment
 
 ===========*/
 /*-------------------------------------
@@ -532,7 +534,7 @@ a:focus.service-btn {
 .statistics:before {
     position: absolute;
     content: '';
-    background: rgba(115, 112, 216, .8);
+    background: rgba(115, 112, 216, .7);
     height: 100%;
     width: 100%;
     top: 0;
@@ -626,7 +628,7 @@ a:focus.service-btn {
     justify-content: center;
     flex-direction: column;
     transform: scale(0);
-    background: rgba(115, 112, 216, 0.75);
+    background: rgba(115, 112, 216, 0.7);
     transition: all 0.7s ease 0s;
 
 }
@@ -740,7 +742,7 @@ a:active.learn-btn {
 }
 
 .contact:before {
-    background: rgba(115, 112, 215, .85);
+    background: rgba(115, 112, 215, .7);
     position: absolute;
     left: 0;
     top: 0;
@@ -1172,4 +1174,290 @@ fa
     position: relative;
     padding-left: 42px;
     text-align: right;
+}
+
+/*-------------------------------------
+		18. Application
+--------------------------------------*/
+#application {
+    padding: 116px 0 85px;
+}
+
+.sub-section {
+    margin: 30px;
+}
+
+.application-content {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.application-content h2 {
+    color: #7086e6;
+    text-align: left;
+}
+
+
+.application-content input {
+    background: transparent;
+    border: 1px solid #b2b2b2;
+
+}
+
+.photo-section {
+    top: 20px;
+}
+
+.profile-pic {
+    width: 220px;
+    height: 160px;
+}
+
+.file-upload {
+    display: none !important;
+}
+
+.circle {
+    border-radius: 1000px !important;
+    overflow: hidden;
+    width: 158px;
+    height: 158px;
+    border: 8px solid #8a88c4;
+    position: absolute;
+    left: 50px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.p-image {
+    display: inline;
+    position: absolute;
+    top: 120px;
+    left: 160px;
+    color: #555555;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.p-image:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.upload-button {
+    font-size: 1.9em;
+}
+
+.upload-button:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    color: black;
+    width: 3rem;
+}
+
+.apply-btn {
+    margin-top: 49px;
+    letter-spacing: 1.2px;
+}
+
+.apply-view {
+    background: #7370d8;
+    border: 1px solid #7370d8;
+    width: 185px;
+    height: 52px;
+    line-height: 50px;
+    white-space: nowrap;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.apply-view:hover {
+    color: #7370d8;
+    background: transparent;
+}
+
+.material-icons {
+    color: #7370d8 !important;
+    cursor: pointer;
+}
+
+.exam-icon svg {
+
+    height: 4rem;
+    width: 2rem;
+}
+
+.exam-name {
+    text-align: left !important;
+}
+
+.course-price {
+    font-size: 40px;
+    color: #7370d8;
+}
+
+
+.tgl {
+    display: none;
+}
+
+.tgl,
+.tgl:after,
+.tgl:before,
+.tgl *,
+.tgl *:after,
+.tgl *:before,
+.tgl+.tgl-btn {
+    box-sizing: border-box;
+}
+
+.tgl::selection,
+.tgl:after::selection,
+.tgl:before::selection,
+.tgl *::selection,
+.tgl *:after::selection,
+.tgl *:before::selection,
+.tgl+.tgl-btn::selection {
+    background: none;
+}
+
+.tgl+.tgl-btn {
+    outline: 0;
+    display: block;
+    width: 8em;
+    height: 3.5em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tgl+.tgl-btn:after,
+.tgl+.tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.tgl+.tgl-btn:after {
+    left: 0;
+}
+
+.tgl+.tgl-btn:before {
+    display: none;
+}
+
+.tgl:checked+.tgl-btn:after {
+    left: 50%;
+}
+
+.tgl-skewed+.tgl-btn {
+    overflow: hidden;
+    transform: skew(-10deg);
+    backface-visibility: hidden;
+    transition: all .2s ease;
+    font-family: sans-serif;
+    background: #888;
+}
+
+.tgl-skewed+.tgl-btn:after,
+.tgl-skewed+.tgl-btn:before {
+    transform: skew(10deg);
+    display: inline-block;
+    transition: all .2s ease;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    line-height: 3em;
+    font-weight: bold;
+    font-size: medium;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.tgl-skewed+.tgl-btn:after {
+    left: 100%;
+    content: attr(data-tg-on);
+}
+
+.tgl-skewed+.tgl-btn:before {
+    left: 0;
+    content: attr(data-tg-off);
+}
+
+.tgl-skewed+.tgl-btn:active {
+    background: #888;
+}
+
+.tgl-skewed+.tgl-btn:active:before {
+    left: -10%;
+}
+
+.tgl-skewed:checked+.tgl-btn {
+    background: rgb(24, 179, 24);
+}
+
+.tgl-skewed:checked+.tgl-btn:before {
+    left: -100%;
+}
+
+.tgl-skewed:checked+.tgl-btn:after {
+    left: 0;
+}
+
+.tgl-skewed:checked+.tgl-btn:active:after {
+    left: 10%;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+/*-------------------------------------
+		19. Payment
+--------------------------------------*/
+.tabs-left,
+.tabs-right {
+    border-bottom: none;
+    padding-top: 2px;
+}
+
+.tabs-left {
+    border-right: 1px solid #ddd;
+}
+
+.tabs-left>li,
+.tabs-right>li {
+    float: none;
+    margin-bottom: 2px;
+}
+
+.tabs-left>li {
+    margin-right: -1px;
+}
+
+.tabs-left>li.active>a,
+.tabs-left>li.active>a:hover,
+.tabs-left>li.active>a:focus {
+    border-bottom-color: #ddd;
+    border-right-color: transparent;
+}
+
+.tabs-left>li>a {
+    border-radius: 4px 0 0 4px;
+    margin-right: 0;
+    display: block;
 }

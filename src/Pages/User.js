@@ -7,14 +7,13 @@ import EditIcon from '@material-ui/icons/Edit';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import AcademicTable from '../Components/AcademicTable';
+import { Redirect } from 'react-router-dom';
 export default class Header extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             prevScrollpos: window.pageYOffset,
-            visible: true,
-            show: false
+            visible: true
         };
     }
 
@@ -31,7 +30,6 @@ export default class Header extends Component {
     // Hide or show the menu.
     handleScroll = () => {
         const { prevScrollpos } = this.state;
-
         const currentScrollPos = window.pageYOffset;
         const visible = window.pageYOffset === 0;
         this.setState({
@@ -40,68 +38,56 @@ export default class Header extends Component {
         });
     };
 
-    showModal = (type) => {
-        this.setState({
-            show: true
-        });
-    };
+    // products = [{
+    //     name: "B-Tech",
+    //     desc: "A complete package for testing your carees.Exam of 120 questions",
+    //     price: 150
+    // }, {
+    //     name: "B-Pharma",
+    //     desc: "A complete package for testing your carees.Exam of 60 questions",
+    //     price: 130
+    // },
+    // {
+    //     name: "B-Comm",
+    //     desc: "A complete package for testing your carees.Exam of 110 questions",
+    //     price: 100
+    // }];
 
-    hideModal = () => {
-        this.setState({ show: false });
-    };
-
-    renderModel = () => {
-
-    };
-
-    products = [{
-        name: "B-Tech",
-        desc: "A complete package for testing your carees.Exam of 120 questions",
-        price: 150
-    }, {
-        name: "B-Pharma",
-        desc: "A complete package for testing your carees.Exam of 60 questions",
-        price: 130
-    },
-    {
-        name: "B-Comm",
-        desc: "A complete package for testing your carees.Exam of 110 questions",
-        price: 100
-    }];
-
-    renderTableData() {
-        return this.products.map((products, index) => {
-            const { name, desc, price } = products //destructuring
-            return (
-                <tr>
-                    <td >
-                        <i className="exam-icon"><FaBookReader /></i>
-                    </td>
-                    <td >
-                        <div className="exam-name">
-                            <h2>{name}</h2>
-                            <p>{desc}</p>
-                        </div>
-                    </td>
-                    <td>
-                        <label className="course-price">Rs {price}</label>
-                    </td>
-                    <td >
-                        <div>
-                            <input className="tgl tgl-skewed" id="cb4" type="checkbox" />
-                            <label className="tgl-btn" data-tg-off="SELECT" data-tg-on="ADDED"
-                                htmlFor="cb4"></label>
-                        </div>
-                    </td>
-                </tr>
-            )
-        })
-    };
+    // renderTableData() {
+    //     return this.products.map((products, index) => {
+    //         const { name, desc, price } = products //destructuring
+    //         return (
+    //             <tr>
+    //                 <td >
+    //                     <i className="exam-icon"><FaBookReader /></i>
+    //                 </td>
+    //                 <td >
+    //                     <div className="exam-name">
+    //                         <h2>{name}</h2>
+    //                         <p>{desc}</p>
+    //                     </div>
+    //                 </td>
+    //                 <td>
+    //                     <label className="course-price">Rs {price}</label>
+    //                 </td>
+    //                 <td >
+    //                     <div>
+    //                         <input className="tgl tgl-skewed" id="cb4" type="checkbox" />
+    //                         <label className="tgl-btn" data-tg-off="SELECT" data-tg-on="ADDED"
+    //                             htmlFor="cb4"></label>
+    //                     </div>
+    //                 </td>
+    //             </tr>
+    //         )
+    //     })
+    // };
 
     render() {
+        if (!sessionStorage.getItem('userData')) {
+            return (<Redirect to='/' />);
+        }
         return (
             <div >
-                {this.renderModel()}
                 <div className="div-login-bar">
                     <div className="container">
                         <Navbar className="loginnavbar" collapseOnSelect expand="lg" >
@@ -109,9 +95,8 @@ export default class Header extends Component {
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mr-auto" variant="dark">
                                     <Nav.Link><FaPhone />  +91 XXXXXXXXXX</Nav.Link>
-                                    <Nav.Link><FaEnvelope />  abc@xyz.com</Nav.Link>
+                                    <Nav.Link><FaEnvelope />  deskool@gmail.com</Nav.Link>
                                 </Nav>
-                                <Col>Hey <h3>Bhanu</h3></Col>
                                 <Nav className="social-links">
                                     <Nav.Link href="#deets"><FaFacebookF /></Nav.Link>
                                     <Nav.Link href="#deets" ><FaGoogle /></Nav.Link>
@@ -203,14 +188,14 @@ export default class Header extends Component {
                 <div id="application" className="team">
                     <div className="container">
                         <div className="application-content">
-                            <div classname="sub-section">
+                            <div className="sub-section">
                                 <div className="table-title">
                                     <h2>Choose Your <b>Exam</b></h2>
                                 </div>
                                 <div className="table-wrapper-scroll-y my-custom-scrollbar">
                                     <Table className="table table-bordered table-striped">
                                         <tbody>
-                                            {this.renderTableData()}
+                                            {/* {this.renderTableData()} */}
                                         </tbody>
                                     </Table>
                                 </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CountUp from 'react-countup';
-import { Nav, Navbar, Row, Modal, FormGroup, Col, FormControl } from 'react-bootstrap';
+import { Row,  FormGroup, Col, FormControl } from 'react-bootstrap';
 import { FaPhone, FaEnvelope, FaFacebookF, FaGoogle, FaLinkedinIn, FaTwitter, FaPlay } from 'react-icons/fa';
 
 export default class Home extends Component {

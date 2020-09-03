@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function PostData(userdata) {
+export default function PostData(type, userdata) {
+    var baseURL = 'https://reqres.in/api/';
     return new Promise((resolve, reject) => {
-        fetch('https://reqres.in/api/login', {
+        fetch(baseURL + type, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

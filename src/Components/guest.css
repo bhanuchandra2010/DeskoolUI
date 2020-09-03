@@ -68,6 +68,7 @@ h6 {
 p {
     margin: 0;
     font-size: 14px;
+    text-align: center;
 }
 
 img {
@@ -262,7 +263,7 @@ a.navbar-brand {
 
 .single-slide-item-content {
     left: 5%;
-    text-align: left;
+    text-align: center;
 }
 
 .single-slide-item h2 {
@@ -273,16 +274,16 @@ a.navbar-brand {
     margin-bottom: 27px;
     font-family: 'Playfair Display', serif;
     text-transform: capitalize;
-    text-align: left;
+    text-align: center;
 }
 
 .single-slide-item p {
     color: #fefefe;
     font-size: 24px;
-    max-width: 805px;
     font-family: 'Lato', sans-serif;
     line-height: 1.5;
     margin-bottom: 51px;
+    text-align: center;
 }
 
 .single-slide-item button.slide-btn,
@@ -310,9 +311,39 @@ a.navbar-brand {
     transition: .5s;
 }
 
+
+.single-slide-item .dropdown button,
+.single-slide-item .dropdown button:active,
+.single-slide-item .dropdown button:focus {
+    display: inline-block;
+    background: #f5f5fb;
+    padding: 17px 50px;
+    text-decoration: none;
+    color: #5549af;
+    border: 1px solid #f5f5fb;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    font-weight: 700;
+    margin-right: 36px;
+    margin-bottom: 30px;
+    width: 700px;
+    left: 0;
+    outline: 0;
+    box-shadow: none;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
 .single-slide-item button.slide-btn:hover {
-    background: transparent;
-    color: #fff;
+    background: #5549af;
+    color: #f5f5fb;
     border: 1px solid #fff;
 }
 

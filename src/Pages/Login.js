@@ -1,43 +1,58 @@
 import React, { Component } from 'react'
 import { Modal, FormGroup, Button, Form, Row, Col } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import './login.css';
+import PostData from '../Services/PostData';
 
-export default class Register extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
+export default class Login extends Component {
+    constructor() {
+        super();
+        this.login = this.login.bind(this);
+        this.onChange = this.onChange.bind(this);
         this.state = {
-            email: "",
-            password: "",
-            show: false,
-            isError: false,
-            info: ""
-        }
+            username: '',
+            password: '',
+            redirectToReferrer: false,
+            info: ''
+        };
+    }
 
+    login() {
+        if (this.state.username && this.state.password) {
+            PostData('login', this.state).then((result) => {
+                let responseJson = result;
+                if (responseJson.token) {
+                    sessionStorage.setItem('userData', JSON.stringify(responseJson));
+                    this.setState({ redirectToReferrer: true });
+                }
+                else {
+                    this.setState({ info: 'Check your credentials' });
+                }
+            });
+        }
     }
-    handleShow() {
-        this.setState({ show: true })
-    }
-    handleClose() {
-        this.setState({ show: false })
+
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     render() {
+        if (this.state.redirectToReferrer && sessionStorage.getItem('userData')) {
+            return (<Redirect to={'/user'} />)
+        }
         return (
             <div>
-
                 <div className="logo">
-                    <a href="#">Educa-Do</a>
+                    <a >Deskool</a>
                 </div>
                 <FormGroup className="login-group">
                     <h3>Login</h3>
                     <Form.Label>Enter Username</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control type="text" name="username" onChange={this.onChange} />
                     <Form.Label>Enter Password</Form.Label>
-                    <Form.Control type="Password" />
+                    <Form.Control type="Password" name="password" onChange={this.onChange} />
 
-                    <Button className="login-button" onClick={this.onSubmit}>Login</Button>
+                    <Button className="login-button" onClick={this.login}>Login</Button>
                     <a href='javascript:void(0)' onClick={this.loadForgotContent} className="forgot-password" >Forgot Password</a>
                     <div className="modal-response">
                         <span ></span>
@@ -45,12 +60,14 @@ export default class Register extends Component {
                 </FormGroup>
                 <div className="divider">
                     <line x1="0" y1="0" x2="300" y2="0" />
-                    <span>New to Educa-Do</span>
+                    {/* <span>New to Deskool</span> */}
                     <line x1="0" y1="0" x2="200" y2="0" />
-
                 </div>
                 <div className=" form-group register-group">
-                    <Button>Create your Educa-Do Account</Button>
+                    <Button>Create your Deskool Account</Button>
+                </div>
+                <div className="info-group">
+                    <label>{this.state.info}</label>
                 </div>
                 <div className="footer-copyright">
                     <div className="container">

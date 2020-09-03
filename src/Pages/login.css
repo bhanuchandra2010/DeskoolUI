@@ -21,8 +21,16 @@
     margin: 0 auto;
 }
 
+
 a.forgot-password {
-    margin: 20px 10px 0 0px;
+    margin: 10px 0px 0px 40px;
+    color: #44454f;
+}
+
+.forgot-password a:hover {
+    color: #7370d8 !important;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .login-button {
@@ -48,6 +56,15 @@ a.forgot-password {
     text-align: center;
     margin: 20px 0 5px 0;
     font-size: 13px;
+}
+
+
+.info-group {
+    text-align: center;
+    margin: 20px 0 5px 0;
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
 }
 
 .footer-copyright {

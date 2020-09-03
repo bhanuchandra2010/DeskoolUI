@@ -1,0 +1,47 @@
+.form-control {
+    border-radius: 0px;
+    box-shadow: none;
+    outline: 0 !important;
+    margin-bottom: 1rem;
+}
+
+.form-check {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px #7370d8;
+    font-size: 14px;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 0 !important;
+}
+
+.form-group button {
+    background: #7370d8;
+    border-color: #7370d8;
+    color: #fff;
+    border-radius: 0;
+    text-align: center !important;
+}
+
+
+[placeholder]:focus::-webkit-input-placeholder {
+    -webkit-transition: opacity 0.3s 0.3s ease;
+    -moz-transition: opacity 0.3s 0.3s ease;
+    -ms-transition: opacity 0.3s 0.3s ease;
+    -o-transition: opacity 0.3s 0.3s ease;
+    transition: opacity 0.3s 0.3s ease;
+    opacity: 0;
+}
+
+.nav-link {
+    display: inline-block;
+    font-size: 14px;
+}
+
+svg {
+    margin-right: 10px;
+}
